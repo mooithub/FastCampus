@@ -3,7 +3,6 @@ variable "aws_region" {
 }
 
 variable "cluster-name" {
-  default = "terraform-eks"
+  default = "test-eks-cluster"
   type    = string
 }
-

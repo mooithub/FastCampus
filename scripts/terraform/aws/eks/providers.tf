@@ -1,15 +1,12 @@
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 1.0"
 }
 
-# aws 관련 기능을 가지고 있는 모듈
 provider "aws" {
   region = var.aws_region
+  profile = "tf-user"
 }
 
 data "aws_availability_zones" "available" {
-  exclude_names = ["ap-northeast-2b", "ap-northeast-2d"]
+  #exclude_names = ["ap-northeast-2a","ap-northeast-2c"]
 }
-
-# 기본 http get 요청 기능을 가지고 있는 모듈
-provider "http" {}
